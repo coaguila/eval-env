@@ -1,9 +1,5 @@
 package tools
 
-import (
-	"os"
-)
-
 const (
 	OS_READ        = 04
 	OS_WRITE       = 02
@@ -36,9 +32,3 @@ const (
 	OS_ALL_RW  = OS_ALL_R | OS_ALL_W
 	OS_ALL_RWX = OS_ALL_RW | OS_GROUP_X
 )
-
-func initDirectory(src string, name string) error {
-	err := os.MkdirAll(src+name, OS_ALL_RWX)
-
-	return err
-}
